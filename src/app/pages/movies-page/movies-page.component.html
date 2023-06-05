@@ -1,0 +1,30 @@
+<div class="movies__container">
+  <div class="movies-option">
+    <li class="movies-option-item"><a href="">popular</a></li>
+    <li class="movies-option-item"><a href="">now playing</a></li>
+    <li class="movies-option-item"><a href="">upcoming</a></li>
+    <li class="movies-option-item"><a href="">top rated</a></li>
+  </div>
+
+  <div class="movies--content">
+    <div class="list-movies">
+      <div
+        *ngFor="let movie of movies"
+        class="card-movies"
+        style="background-image: url(
+          https://image.tmdb.org/t/p/w500{{ movie.poster_path }})"
+      >
+        <div class="bg-card"></div>
+        <p class="card-movies-btn"><a routerLink="/movies/1">Watch</a></p>
+        <div class="card-des">
+          <p class="card-point">{{ movie.vote_average }}</p>
+          <p class="card-year">{{ movie.release_date }}</p>
+          <p class="card-name">{{ movie.title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="load-more">
+    <button>Load More</button>
+  </div>
+</div>
